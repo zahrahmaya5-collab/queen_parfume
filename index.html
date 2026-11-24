@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Queen Parfume | Your Signature Scent</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #faf7f1;
+    color: #29231e;
+}
+
+/* NAVBAR */
+header {
+    background: #fffdf9;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px #0000000c;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #a47b35;
+}
+
+nav a {
+    text-decoration: none;
+    color: #393027;
+    margin-left: 22px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b28a43;
+}
+
+/* HERO */
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    background: linear-gradient(120deg, #f0e7d7, #fffaf1);
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content span {
+    color: #a47b35;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.1;
+    margin: 20px 0;
+    color: #33271c;
+}
+
+.hero p {
+    line-height: 1.8;
+    color: #756b60;
+    max-width: 480px;
+}
+
+.btn {
+    display: inline-block;
+    background: #a47b35;
+    color: white;
+    text-decoration: none;
+    padding: 14px 27px;
+    margin-top: 28px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #755322;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 430px;
+    height: 410px;
+    object-fit: cover;
+    border-radius: 200px 200px 8px 8px;
+}
+
+/* GENERAL SECTION */
+section {
+    padding: 85px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #a47b35;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin-top: 12px;
+}
+
+.section-title p {
+    color: #81766a;
+    margin-top: 12px;
+}
+
+/* ABOUT */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+    background: #fffdf9;
+}
+
+.about-image, .about-content {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-height: 390px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.about-content h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #756b60;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* PRODUCTS */
+.products {
+    background: #f5efe4;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: #fffdf9;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px #00000012;
+}
+
+.product-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    font-family: Georgia, serif;
+    margin: 18px 0 8px;
+    font-size: 23px;
+}
+
+.product-card p {
+    color: #81766a;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.price {
+    display: block;
+    color: #a47b35;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.order-btn {
+    border: none;
+    background: #a47b35;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    background: #755322;
+}
+
+/* FRAGRANCE */
+.fragrance-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.fragrance {
+    padding: 25px 10px;
+    text-align: center;
+    background: #eee3d2;
+    border-radius: 8px;
+}
+
+.fragrance h3 {
+    font-family: Georgia, serif;
+    color: #8c682e;
+}
+
+/* ADVANTAGES */
+.advantages {
+    background: #fffdf9;
+}
+
+.advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.advantage {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid #e7d9c2;
+    border-radius: 8px;
+}
+
+.advantage .symbol {
+    font-size: 32px;
+    color: #a47b35;
+    margin-bottom: 15px;
+}
+
+.advantage h3 {
+    font-family: Georgia, serif;
+    margin-bottom: 12px;
+}
+
+.advantage p {
+    font-size: 14px;
+    color: #81766a;
+    line-height: 1.7;
+}
+
+/* CONTACT */
+.contact {
+    background: #eee3d2;
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #756b60;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+footer {
+    background: #29231e;
+    color: #f5ead8;
+    padding: 35px 10%;
+    text-align: center;
+}
+
+footer h2 {
+    color: #d4ad68;
+    font-family: Georgia, serif;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 13px;
+    color: #d4c7b6;
+    margin-top: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .hero, .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 55px 7%;
+    }
+
+    .hero-image img {
+        height: 330px;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product-card img {
+        height: 170px;
+    }
+
+    .fragrance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">QUEEN PARFUME.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#fragrance">Aroma</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span>DISCOVER YOUR SIGNATURE SCENT</span>
+
+        <h1>Elegance in Every Drop.</h1>
+
+        <p>
+            Temukan aroma yang mencerminkan kepribadianmu.
+            Queen Parfume menghadirkan pilihan parfum
+            berkualitas dengan aroma elegan dan harga terjangkau.
+        </p>
+
+        <a href="#products" class="btn">Explore Collection</a>
+    </div>
+
+    <div class="hero-image">
+        <img
+        src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=900"
+        alt="Queen Parfume Collection">
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="about-image">
+        <img
+        src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=900"
+        alt="Elegant perfume">
+    </div>
+
+    <div class="about-content">
+        <span style="color:#a47b35; letter-spacing:3px;">
+            ABOUT QUEEN PARFUME
+        </span>
+
+        <h2>Beauty Begins With Your Scent.</h2>
+
+        <p>
+            Queen Parfume merupakan bisnis parfum yang hadir
+            untuk memberikan pengalaman menggunakan aroma
+            berkualitas dengan pilihan yang beragam.
+        </p>
+
+        <p>
+            Kami menyediakan berbagai ukuran parfum yang
+            praktis, harga terjangkau, serta pilihan aroma
+            yang dapat disesuaikan dengan karakter dan
+            kebutuhan setiap pelanggan.
+        </p>
+
+        <a href="#contact" class="btn">Contact Us</a>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+
+    <div class="section-title">
+        <span>OUR COLLECTION</span>
+        <h2>Find Your Favorite</h2>
+        <p>Pilih ukuran parfum sesuai kebutuhanmu.</p>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img
+            src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600"
+            alt="Perfume 2.5 ml">
+
+            <h3>Mini Perfume</h3>
+            <p>Ukuran 2,5 ml<br>Praktis dibawa ke mana saja.</p>
+            <span class="price">Rp20.000</span>
+
+            <button class="order-btn"
+            onclick="order('Mini Perfume 2,5 ml')">
+            Order Now
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img
+            src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?w=600"
+            alt="Perfume 7.5 ml">
+
+            <h3>Travel Perfume</h3>
+            <p>Ukuran 7,5 ml<br>Cocok untuk aktivitas sehari-hari.</p>
+            <span class="price">Hubungi Kami</span>
+
+            <button class="order-btn"
+            onclick="order('Travel Perfume 7,5 ml')">
+            Order Now
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img
+            src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=600"
+            alt="Perfume 30 ml">
+
+            <h3>Classic Perfume</h3>
+            <p>Ukuran 30 ml<br>Untuk koleksi aroma favoritmu.</p>
+            <span class="price">Hubungi Kami</span>
+
+            <button class="order-btn"
+            onclick="order('Classic Perfume 30 ml')">
+            Order Now
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- FRAGRANCE -->
+<section id="fragrance">
+
+    <div class="section-title">
+        <span>EXPLORE THE SCENT</span>
+        <h2>Our Fragrance</h2>
+        <p>Setiap aroma memiliki karakter yang berbeda.</p>
+    </div>
+
+    <div class="fragrance-grid">
+        <div class="fragrance">
+            <h3>Floral</h3>
+            <p>Fresh & Romantic</p>
+        </div>
+
+        <div class="fragrance">
+            <h3>Fruity</h3>
+            <p>Sweet & Cheerful</p>
+        </div>
+
+        <div class="fragrance">
+            <h3>Aquatic</h3>
+            <p>Fresh & Clean</p>
+        </div>
+
+        <div class="fragrance">
+            <h3>Citrus</h3>
+            <p>Bright & Refreshing</p>
+        </div>
+
+        <div class="fragrance">
+            <h3>Woody</h3>
+            <p>Warm & Elegant</p>
+        </div>
+    </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="advantages">
+
+    <div class="section-title">
+        <span>WHY CHOOSE US</span>
+        <h2>The Queen Experience</h2>
+        <p>Lebih dari sekadar aroma.</p>
+    </div>
+
+    <div class="advantage-grid">
+
+        <div class="advantage">
+            <div class="symbol">✦</div>
+            <h3>Quality Ingredients</h3>
+            <p>Menggunakan bibit parfum asli untuk memberikan pengalaman aroma berkualitas.</p>
+        </div>
+
+        <div class="advantage">
+            <div class="symbol">♡</div>
+            <h3>Long Lasting</h3>
+            <p>Aroma tahan hingga 10 jam sesuai klaim produk.</p>
+        </div>
+
+        <div class="advantage">
+            <div class="symbol">✧</div>
+            <h3>Custom Fragrance</h3>
+            <p>Bisa request campuran aroma sesuai kebutuhan dan selera.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <span style="letter-spacing:3px; color:#a47b35;">
+        GET IN TOUCH
+    </span>
+
+    <h2>Find Your Signature Scent.</h2>
+
+    <p>
+        Siap menemukan aroma favoritmu?<br>
+        Hubungi Queen Parfume untuk informasi dan pemesanan.
+    </p>
+
+    <a href="#" class="btn" onclick="order('Informasi produk Queen Parfume')">
+        Order via WhatsApp
+    </a>
+
+    <p style="margin-top:25px;">
+        Instagram: @queenparfume
+    </p>
+
+    <p style="margin-top:30px;">
+       Atau temui kami langsung di 
+       Medan Sunggal, Sumatera Utara, Indonesia. 
+       Kode Pos: 20121
+    </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h2>QUEEN PARFUME.</h2>
+    <p>Your Signature Scent, Your Identity.</p>
+    <p>© 2026 Queen Parfume. All Rights Reserved.</p>
+</footer>
+
+<script>
+const whatsappNumber = "6283143382832";
+
+function order(product) {
+    const message =
+        "Halo Queen Parfume, saya tertarik dengan " +
+        product +
+        ". Boleh minta informasi lebih lanjut?";
+
+    const url =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
