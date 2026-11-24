@@ -1,649 +1,681 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Queen Parfume | Your Signature Scent</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #faf7f1;
-    color: #29231e;
-}
-
-/* NAVBAR */
-header {
-    background: #fffdf9;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px #0000000c;
-}
-
-.logo {
-    font-family: Georgia, serif;
-    font-size: 25px;
-    font-weight: bold;
-    color: #a47b35;
-}
-
-nav a {
-    text-decoration: none;
-    color: #393027;
-    margin-left: 22px;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #b28a43;
-}
-
-/* HERO */
-.hero {
-    min-height: 570px;
-    display: flex;
-    align-items: center;
-    padding: 70px 10%;
-    background: linear-gradient(120deg, #f0e7d7, #fffaf1);
-    gap: 50px;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.hero-content span {
-    color: #a47b35;
-    letter-spacing: 4px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.hero h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(42px, 6vw, 70px);
-    line-height: 1.1;
-    margin: 20px 0;
-    color: #33271c;
-}
-
-.hero p {
-    line-height: 1.8;
-    color: #756b60;
-    max-width: 480px;
-}
-
-.btn {
-    display: inline-block;
-    background: #a47b35;
-    color: white;
-    text-decoration: none;
-    padding: 14px 27px;
-    margin-top: 28px;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #755322;
-    transform: translateY(-2px);
-}
-
-.hero-image {
-    flex: 1;
-    text-align: center;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 430px;
-    height: 410px;
-    object-fit: cover;
-    border-radius: 200px 200px 8px 8px;
-}
-
-/* GENERAL SECTION */
-section {
-    padding: 85px 10%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.section-title span {
-    color: #a47b35;
-    letter-spacing: 3px;
-    font-size: 12px;
-}
-
-.section-title h2 {
-    font-family: Georgia, serif;
-    font-size: 38px;
-    margin-top: 12px;
-}
-
-.section-title p {
-    color: #81766a;
-    margin-top: 12px;
-}
-
-/* ABOUT */
-.about {
-    display: flex;
-    align-items: center;
-    gap: 55px;
-    background: #fffdf9;
-}
-
-.about-image, .about-content {
-    flex: 1;
-}
-
-.about-image img {
-    width: 100%;
-    max-height: 390px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.about-content h2 {
-    font-family: Georgia, serif;
-    font-size: 38px;
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    color: #756b60;
-    line-height: 1.9;
-    margin-bottom: 15px;
-}
-
-/* PRODUCTS */
-.products {
-    background: #f5efe4;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.product-card {
-    background: #fffdf9;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 10px 25px #00000012;
-}
-
-.product-card img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.product-card h3 {
-    font-family: Georgia, serif;
-    margin: 18px 0 8px;
-    font-size: 23px;
-}
-
-.product-card p {
-    color: #81766a;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.price {
-    display: block;
-    color: #a47b35;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-.order-btn {
-    border: none;
-    background: #a47b35;
-    color: white;
-    padding: 11px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.order-btn:hover {
-    background: #755322;
-}
-
-/* FRAGRANCE */
-.fragrance-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-}
-
-.fragrance {
-    padding: 25px 10px;
-    text-align: center;
-    background: #eee3d2;
-    border-radius: 8px;
-}
-
-.fragrance h3 {
-    font-family: Georgia, serif;
-    color: #8c682e;
-}
-
-/* ADVANTAGES */
-.advantages {
-    background: #fffdf9;
-}
-
-.advantage-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.advantage {
-    text-align: center;
-    padding: 30px 20px;
-    border: 1px solid #e7d9c2;
-    border-radius: 8px;
-}
-
-.advantage .symbol {
-    font-size: 32px;
-    color: #a47b35;
-    margin-bottom: 15px;
-}
-
-.advantage h3 {
-    font-family: Georgia, serif;
-    margin-bottom: 12px;
-}
-
-.advantage p {
-    font-size: 14px;
-    color: #81766a;
-    line-height: 1.7;
-}
-
-/* CONTACT */
-.contact {
-    background: #eee3d2;
-    text-align: center;
-}
-
-.contact h2 {
-    font-family: Georgia, serif;
-    font-size: 38px;
-    margin-bottom: 15px;
-}
-
-.contact p {
-    color: #756b60;
-    line-height: 1.8;
-}
-
-/* FOOTER */
-footer {
-    background: #29231e;
-    color: #f5ead8;
-    padding: 35px 10%;
-    text-align: center;
-}
-
-footer h2 {
-    color: #d4ad68;
-    font-family: Georgia, serif;
-    margin-bottom: 10px;
-}
-
-footer p {
-    font-size: 13px;
-    color: #d4c7b6;
-    margin-top: 8px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 18px 5%;
-    }
-
-    nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    nav a {
-        margin: 0;
-        font-size: 12px;
-    }
-
-    .hero, .about {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero {
-        padding: 55px 7%;
-    }
-
-    .hero-image img {
-        height: 330px;
-    }
-
-    section {
-        padding: 65px 7%;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .product-card img {
-        height: 170px;
-    }
-
-    .fragrance-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .advantage-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title h2 {
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 380px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASHIOM VELORA | Aesthetic Creative & Fashion Digital Studio</title>
+    
+    <!-- Google Fonts: Cormorant Garamond (Serif Elegan) & Plus Jakarta Sans (Sans-serif Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Warna Kustom Peach & Cream -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FDFBF7',
+                            100: '#FAF4EB',
+                            200: '#F5E8D7',
+                            300: '#EED6B9',
+                        },
+                        peach: {
+                            100: '#FDE8DF',
+                            200: '#FAD1C0',
+                            300: '#F5B59C',
+                            400: '#EE9677',
+                            500: '#E57A56',
+                            600: '#C95E3B',
+                        },
+                        charcoal: {
+                            800: '#3A322E',
+                            900: '#26201D',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+<body class="bg-cream-50 text-charcoal-800 font-sans antialiased selection:bg-peach-200 selection:text-charcoal-900 overflow-x-hidden">
 
-<body>
+    <!-- 1. HEADER & NAVIGASI -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-cream-50/85 backdrop-blur-md border-b border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Brand -->
+                <a href="#" class="flex items-center space-x-2 group">
+                    <span class="w-8 h-8 rounded-full bg-peach-400 flex items-center justify-center text-cream-50 font-serif font-bold text-lg group-hover:scale-105 transition-transform">
+                        FV
+                    </span>
+                    <span class="font-serif text-2xl font-bold tracking-widest text-charcoal-900">
+                        FASHIOM <span class="text-peach-500 font-normal italic">VELORA</span>
+                    </span>
+                </a>
 
-<!-- NAVBAR -->
-<header>
-    <div class="logo">QUEEN PARFUME.</div>
+                <!-- Menu Navigasi Desktop -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-sm font-medium text-charcoal-800 hover:text-peach-500 transition-colors">Beranda</a>
+                    <a href="#layanan" class="text-sm font-medium text-charcoal-800 hover:text-peach-500 transition-colors">Layanan</a>
+                    <a href="#tentang" class="text-sm font-medium text-charcoal-800 hover:text-peach-500 transition-colors">Tentang Kami</a>
+                    <a href="#portofolio" class="text-sm font-medium text-charcoal-800 hover:text-peach-500 transition-colors">Portofolio</a>
+                    <a href="#kontak" class="px-5 py-2.5 rounded-full bg-peach-400 hover:bg-peach-500 text-cream-50 text-sm font-medium transition-all shadow-sm hover:shadow-md">
+                        Kontak Kami
+                    </a>
+                </nav>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#fragrance">Aroma</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<!-- HOME -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <span>DISCOVER YOUR SIGNATURE SCENT</span>
-
-        <h1>Elegance in Every Drop.</h1>
-
-        <p>
-            Temukan aroma yang mencerminkan kepribadianmu.
-            Queen Parfume menghadirkan pilihan parfum
-            berkualitas dengan aroma elegan dan harga terjangkau.
-        </p>
-
-        <a href="#products" class="btn">Explore Collection</a>
-    </div>
-
-    <div class="hero-image">
-        <img
-        src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=900"
-        alt="Queen Parfume Collection">
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-    <div class="about-image">
-        <img
-        src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=900"
-        alt="Elegant perfume">
-    </div>
-
-    <div class="about-content">
-        <span style="color:#a47b35; letter-spacing:3px;">
-            ABOUT QUEEN PARFUME
-        </span>
-
-        <h2>Beauty Begins With Your Scent.</h2>
-
-        <p>
-            Queen Parfume merupakan bisnis parfum yang hadir
-            untuk memberikan pengalaman menggunakan aroma
-            berkualitas dengan pilihan yang beragam.
-        </p>
-
-        <p>
-            Kami menyediakan berbagai ukuran parfum yang
-            praktis, harga terjangkau, serta pilihan aroma
-            yang dapat disesuaikan dengan karakter dan
-            kebutuhan setiap pelanggan.
-        </p>
-
-        <a href="#contact" class="btn">Contact Us</a>
-    </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="products" id="products">
-
-    <div class="section-title">
-        <span>OUR COLLECTION</span>
-        <h2>Find Your Favorite</h2>
-        <p>Pilih ukuran parfum sesuai kebutuhanmu.</p>
-    </div>
-
-    <div class="product-grid">
-
-        <div class="product-card">
-            <img
-            src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600"
-            alt="Perfume 2.5 ml">
-
-            <h3>Mini Perfume</h3>
-            <p>Ukuran 2,5 ml<br>Praktis dibawa ke mana saja.</p>
-            <span class="price">Rp20.000</span>
-
-            <button class="order-btn"
-            onclick="order('Mini Perfume 2,5 ml')">
-            Order Now
-            </button>
+                <!-- Tombol Menu Mobile -->
+                <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden p-2 rounded-xl text-charcoal-800 hover:bg-cream-200 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
         </div>
 
-        <div class="product-card">
-            <img
-            src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?w=600"
-            alt="Perfume 7.5 ml">
-
-            <h3>Travel Perfume</h3>
-            <p>Ukuran 7,5 ml<br>Cocok untuk aktivitas sehari-hari.</p>
-            <span class="price">Hubungi Kami</span>
-
-            <button class="order-btn"
-            onclick="order('Travel Perfume 7,5 ml')">
-            Order Now
-            </button>
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream-100 border-b border-cream-200 px-6 pt-4 pb-6 space-y-3 shadow-lg">
+            <a href="#home" class="block py-2 text-base font-medium text-charcoal-800 hover:text-peach-500">Beranda</a>
+            <a href="#layanan" class="block py-2 text-base font-medium text-charcoal-800 hover:text-peach-500">Layanan</a>
+            <a href="#tentang" class="block py-2 text-base font-medium text-charcoal-800 hover:text-peach-500">Tentang Kami</a>
+            <a href="#portofolio" class="block py-2 text-base font-medium text-charcoal-800 hover:text-peach-500">Portofolio</a>
+            <a href="#kontak" class="block mt-2 text-center py-3 rounded-full bg-peach-400 text-cream-50 font-medium">Kontak Kami</a>
         </div>
+    </header>
 
-        <div class="product-card">
-            <img
-            src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=600"
-            alt="Perfume 30 ml">
+    <!-- 2. HERO / BANNER SECTION -->
+    <section id="home" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+        <!-- Dekorasi Latar Belakang Lembut -->
+        <div class="absolute top-20 right-0 -z-10 w-96 h-96 bg-peach-200/40 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-0 -z-10 w-80 h-80 bg-cream-300/50 rounded-full blur-3xl"></div>
 
-            <h3>Classic Perfume</h3>
-            <p>Ukuran 30 ml<br>Untuk koleksi aroma favoritmu.</p>
-            <span class="price">Hubungi Kami</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Teks Hero -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-peach-100 border border-peach-200 text-peach-600 text-xs font-semibold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-peach-500 mr-2 animate-pulse"></span>
+                        Student-Led Creative & Digital Studio
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal-900 leading-tight">
+                        Bikin Visual Brand Kamu Makin <span class="italic text-peach-500 font-normal">Stand Out & Aesthetic</span>.
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-charcoal-800/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        FASHIOM VELORA adalah agensi kreatif yang digawangi anak-anak muda dan mahasiswa kreatif. Kami bantu brand fashion, thrift, sampai local brand kamu tampil kece dengan desain kekinian tanpa bikin kantong jebol!
+                    </p>
+                    
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#portofolio" class="px-8 py-4 rounded-full bg-charcoal-900 hover:bg-peach-500 text-cream-50 font-medium text-sm transition-all duration-300 shadow-md hover:shadow-xl">
+                            Kepoin Karya Kami
+                        </a>
+                        <a href="#layanan" class="px-8 py-4 rounded-full bg-cream-100 hover:bg-cream-200 border border-cream-300 text-charcoal-900 font-medium text-sm transition-all duration-300">
+                            Cek Layanan
+                        </a>
+                    </div>
 
-            <button class="order-btn"
-            onclick="order('Classic Perfume 30 ml')">
-            Order Now
-            </button>
+                    <!-- Statistik Singkat -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-cream-200 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-serif text-3xl font-bold text-peach-500">120+</p>
+                            <p class="text-xs text-charcoal-800/70 mt-1">Local Brand & UMKM</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-3xl font-bold text-peach-500">98%</p>
+                            <p class="text-xs text-charcoal-800/70 mt-1">Klien Repeat Order</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-3xl font-bold text-peach-500">24/7</p>
+                            <p class="text-xs text-charcoal-800/70 mt-1">Fast Respon & Revisi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gambar Hero Aesthetic -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-full">
+                        <!-- Frame Utama Melengkung (Arch) -->
+                        <div class="rounded-t-full rounded-b-3xl overflow-hidden border-8 border-cream-100 shadow-2xl aspect-[4/5] bg-cream-200">
+                            <img 
+                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" 
+                                alt="Fashiom Velora Aesthetic Fashion Editorial" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                onerror="this.src='https://placehold.co/800x1000/FAD1C0/3A322E?text=FASHIOM+VELORA'"
+                            >
+                        </div>
+
+                        <!-- Kartu Melayang Aesthetic -->
+                        <div class="hidden sm:flex items-center gap-3 absolute -bottom-6 -left-6 bg-cream-50/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-cream-200 max-w-xs">
+                            <div class="w-12 h-12 rounded-xl bg-peach-100 flex items-center justify-center text-peach-500 shrink-0">
+                                <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-serif font-bold text-charcoal-900 text-base">Vibes Anak Muda</p>
+                                <p class="text-xs text-charcoal-800/70">Desain fresh, estetik & ramah budget mahasiswa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- 3. LAYANAN (SERVICES) -->
+    <section id="layanan" class="py-20 bg-cream-100/70 border-y border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header Section -->
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-semibold tracking-widest uppercase text-peach-500">Skill & Jasa Kami</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-900">
+                    Layanan Kreatif & Digital
+                </h2>
+                <p class="text-sm sm:text-base text-charcoal-800/75">
+                    Dari tugas proyek kampus, merintis clothing line sendiri, sampai upgrade tampilan olshop kamu biar makin dipercaya pembeli.
+                </p>
+            </div>
 
-<!-- FRAGRANCE -->
-<section id="fragrance">
+            <!-- Grid Kartu Layanan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Layanan 1 -->
+                <div class="group bg-cream-50 p-8 rounded-3xl border border-cream-200 hover:border-peach-300 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-peach-100 group-hover:bg-peach-400 text-peach-500 group-hover:text-cream-50 flex items-center justify-center text-2xl transition-colors mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal-900 mb-3">Aesthetic Web & Katalog</h3>
+                    <p class="text-sm text-charcoal-800/75 leading-relaxed mb-6">
+                        Bikin website portofolio, landing page, atau katalog olshop yang mobile-friendly, anti lemot, dan tampilannya estetik abis.
+                    </p>
+                    <a href="#kontak" class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-peach-500 group-hover:text-peach-600">
+                        Tanya-Tanya Dulu <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
 
-    <div class="section-title">
-        <span>EXPLORE THE SCENT</span>
-        <h2>Our Fragrance</h2>
-        <p>Setiap aroma memiliki karakter yang berbeda.</p>
-    </div>
+                <!-- Layanan 2 -->
+                <div class="group bg-cream-50 p-8 rounded-3xl border border-cream-200 hover:border-peach-300 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-peach-100 group-hover:bg-peach-400 text-peach-500 group-hover:text-cream-50 flex items-center justify-center text-2xl transition-colors mb-6">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal-900 mb-3">Branding & Desain Logo</h3>
+                    <p class="text-sm text-charcoal-800/75 leading-relaxed mb-6">
+                        Lagi ngerintis brand fashion atau bisnis bareng teman kampus? Kami buatin logo, palet warna, sampai desain packaging yang beda dari yang lain.
+                    </p>
+                    <a href="#kontak" class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-peach-500 group-hover:text-peach-600">
+                        Tanya-Tanya Dulu <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
 
-    <div class="fragrance-grid">
-        <div class="fragrance">
-            <h3>Floral</h3>
-            <p>Fresh & Romantic</p>
+                <!-- Layanan 3 -->
+                <div class="group bg-cream-50 p-8 rounded-3xl border border-cream-200 hover:border-peach-300 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-peach-100 group-hover:bg-peach-400 text-peach-500 group-hover:text-cream-50 flex items-center justify-center text-2xl transition-colors mb-6">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal-900 mb-3">Feed IG & Lookbook</h3>
+                    <p class="text-sm text-charcoal-800/75 leading-relaxed mb-6">
+                        Biar feeds Instagram dan TikTok brand kamu rapi dan selaras. Kami bantu konsep foto produk, editing, sampai template konten siap pakai.
+                    </p>
+                    <a href="#kontak" class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-peach-500 group-hover:text-peach-600">
+                        Tanya-Tanya Dulu <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="fragrance">
-            <h3>Fruity</h3>
-            <p>Sweet & Cheerful</p>
+    <!-- 4. TENTANG KAMI (ABOUT US) -->
+    <section id="tentang" class="py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Kolase Gambar Unsplash -->
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="rounded-3xl overflow-hidden shadow-lg aspect-[3/4] bg-cream-200">
+                            <img 
+                                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80" 
+                                alt="Tim Kreatif Fashiom Velora" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x800/F5E8D7/3A322E?text=Studio+Velora'"
+                            >
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="rounded-3xl overflow-hidden shadow-lg aspect-[3/4] bg-cream-200">
+                            <img 
+                                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80" 
+                                alt="Detail Estetika Fashion" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x800/FAD1C0/3A322E?text=Aesthetic+Mood'"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Narasi Tentang Kami -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-semibold tracking-widest uppercase text-peach-500">Cerita Fashiom Velora</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-900 leading-tight">
+                        Berawal dari Tongkrongan Kampus, Jadi Karya Nyata.
+                    </h2>
+                    <p class="text-base text-charcoal-800/80 leading-relaxed">
+                        <strong>FASHIOM VELORA</strong> lahir dari sekumpulan mahasiswa desain dan IT yang hobi ngulik tren fashion serta estetika visual. Kami paham banget susahnya bangun brand dari nol, makanya kami hadir buat bantu eksekusi ide kreatif kamu jadi nyata.
+                    </p>
+                    <p class="text-base text-charcoal-800/80 leading-relaxed">
+                        Gak perlu kaku kayak agensi korporat! Di sini kita bisa diskusi santai layaknya teman seangkatan, tapi hasil kerjanya tetap rapi, tepat waktu, dan berkualitas tinggi.
+                    </p>
+
+                    <!-- Poin Keunggulan -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-peach-200 text-peach-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm font-medium text-charcoal-900">Harga Bersahabat & Fleksibel</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-peach-200 text-peach-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm font-medium text-charcoal-900">Desain Kekinian Sesuai Tren Gen-Z</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-peach-200 text-peach-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm font-medium text-charcoal-900">Bisa Diskusi Santai Sambil Ngopi</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-peach-200 text-peach-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm font-medium text-charcoal-900">Anti Ghosting, Update Progress Rutin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="fragrance">
-            <h3>Aquatic</h3>
-            <p>Fresh & Clean</p>
+    <!-- 5. PORTOFOLIO -->
+    <section id="portofolio" class="py-20 bg-cream-100/80 border-t border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header & Filter Portofolio -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="space-y-3">
+                    <span class="text-xs font-semibold tracking-widest uppercase text-peach-500">Hasil Ngulik Tim Kami</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-900">
+                        Portofolio Pilihan
+                    </h2>
+                </div>
+
+                <!-- Tombol Filter Kategori -->
+                <div class="flex flex-wrap gap-2" id="portfolio-filters">
+                    <button data-filter="all" class="filter-btn active px-5 py-2 rounded-full text-xs font-semibold transition-all bg-peach-400 text-cream-50 shadow-sm">
+                        Semua Karya
+                    </button>
+                    <button data-filter="web" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold transition-all bg-cream-50 text-charcoal-800 hover:bg-peach-100 border border-cream-200">
+                        Web Design
+                    </button>
+                    <button data-filter="branding" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold transition-all bg-cream-50 text-charcoal-800 hover:bg-peach-100 border border-cream-200">
+                        Branding
+                    </button>
+                    <button data-filter="editorial" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold transition-all bg-cream-50 text-charcoal-800 hover:bg-peach-100 border border-cream-200">
+                        Editorial
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Item Portofolio -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                <!-- Proyek 1 -->
+                <div class="portfolio-item group bg-cream-50 rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300" data-category="web">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-cream-200">
+                        <img 
+                            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" 
+                            alt="Aurelia Silk E-Commerce" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x600/FAD1C0/3A322E?text=Aurelia+Silk'"
+                        >
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-cream-50/90 backdrop-blur-sm text-charcoal-900 text-xs font-medium">Web Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900 group-hover:text-peach-500 transition-colors">Aurelia Silk Boutique</h3>
+                        <p class="text-sm text-charcoal-800/70 mt-2">Website katalog dan pemesanan online untuk brand outfit kampus berbahan satin & sutra.</p>
+                    </div>
+                </div>
+
+                <!-- Proyek 2 -->
+                <div class="portfolio-item group bg-cream-50 rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300" data-category="branding">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-cream-200">
+                        <img 
+                            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80" 
+                            alt="Nectar & Bloom Skincare" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x600/F5E8D7/3A322E?text=Nectar+Bloom'"
+                        >
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-cream-50/90 backdrop-blur-sm text-charcoal-900 text-xs font-medium">Branding</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900 group-hover:text-peach-500 transition-colors">Nectar & Bloom Skincare</h3>
+                        <p class="text-sm text-charcoal-800/70 mt-2">Bikin ulang identitas visual dan desain kemasan skincare lokal biar makin estetik di TikTok.</p>
+                    </div>
+                </div>
+
+                <!-- Proyek 3 -->
+                <div class="portfolio-item group bg-cream-50 rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300" data-category="editorial">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-cream-200">
+                        <img 
+                            src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80" 
+                            alt="Solstice Resort Lookbook" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x600/FAD1C0/3A322E?text=Solstice+Lookbook'"
+                        >
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-cream-50/90 backdrop-blur-sm text-charcoal-900 text-xs font-medium">Editorial</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900 group-hover:text-peach-500 transition-colors">Solstice Thrift & Vintage</h3>
+                        <p class="text-sm text-charcoal-800/70 mt-2">Konsep foto lookbook dan kurasi feed Instagram untuk kurasi thrift shop anak muda.</p>
+                    </div>
+                </div>
+
+                <!-- Proyek 4 -->
+                <div class="portfolio-item group bg-cream-50 rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300" data-category="web">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-cream-200">
+                        <img 
+                            src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80" 
+                            alt="Maison Claire Atelier" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x600/F5E8D7/3A322E?text=Maison+Claire'"
+                        >
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-cream-50/90 backdrop-blur-sm text-charcoal-900 text-xs font-medium">Web Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900 group-hover:text-peach-500 transition-colors">Maison Claire Sewa Kebaya</h3>
+                        <p class="text-sm text-charcoal-800/70 mt-2">Platform booking sewa kebaya wisuda dan kondangan dengan tampilan galeri interaktif.</p>
+                    </div>
+                </div>
+
+                <!-- Proyek 5 -->
+                <div class="portfolio-item group bg-cream-50 rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300" data-category="branding">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-cream-200">
+                        <img 
+                            src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80" 
+                            alt="Terra Living Ceramics" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x600/FAD1C0/3A322E?text=Terra+Living'"
+                        >
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-cream-50/90 backdrop-blur-sm text-charcoal-900 text-xs font-medium">Branding</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900 group-hover:text-peach-500 transition-colors">Terra Room Decor</h3>
+                        <p class="text-sm text-charcoal-800/70 mt-2">Branding untuk bisnis pernak-pernik kamar kos estetik bernuansa peach dan cream.</p>
+                    </div>
+                </div>
+
+                <!-- Proyek 6 -->
+                <div class="portfolio-item group bg-cream-50 rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300" data-category="editorial">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-cream-200">
+                        <img 
+                            src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" 
+                            alt="Velvet Muse Magazine" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x600/F5E8D7/3A322E?text=Velvet+Muse'"
+                        >
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-cream-50/90 backdrop-blur-sm text-charcoal-900 text-xs font-medium">Editorial</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-bold text-charcoal-900 group-hover:text-peach-500 transition-colors">Velvet Muse Zine Kampus</h3>
+                        <p class="text-sm text-charcoal-800/70 mt-2">Layout majalah digital komunitas fashion mahasiswa dan kampanye lookbook tahunan.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="fragrance">
-            <h3>Citrus</h3>
-            <p>Bright & Refreshing</p>
+    <!-- 6. KONTAK KAMI -->
+    <section id="kontak" class="py-20 lg:py-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-peach-100/70 border border-peach-200 rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Informasi Kontak -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-peach-600">Yuk Ngobrol!</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-900 leading-tight">
+                            Punya Ide Proyek? Gas Diskusi Bareng!
+                        </h2>
+                        <p class="text-sm sm:text-base text-charcoal-800/80 leading-relaxed">
+                            Mau tanya-tanya pricelist dulu atau konsultasi konsep brand kamu? Chat aja, gratis konsultasi kok! Tim FASHIOM VELORA siap bantu kapan aja.
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-11 h-11 rounded-full bg-cream-50 text-peach-500 flex items-center justify-center shadow-sm">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-charcoal-800/60">Email Tim</p>
+                                    <p class="text-sm font-semibold text-charcoal-900">halo@fashiomvelora.id</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-11 h-11 rounded-full bg-cream-50 text-peach-500 flex items-center justify-center shadow-sm">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-charcoal-800/60">WhatsApp Fast Respon</p>
+                                    <p class="text-sm font-semibold text-charcoal-900">+62 812-3456-7890 (Admin Velora)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-11 h-11 rounded-full bg-cream-50 text-peach-500 flex items-center justify-center shadow-sm">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-charcoal-800/60">Basecamp & Co-Working</p>
+                                    <p class="text-sm font-semibold text-charcoal-900">Area Kampus Dr. Mansyur, Medan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulir Kontak -->
+                    <div class="lg:col-span-7 bg-cream-50 p-6 sm:p-10 rounded-3xl shadow-md border border-cream-200">
+                        <form id="contact-form" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="nama" class="block text-xs font-semibold uppercase tracking-wider text-charcoal-800 mb-2">Nama Panggilan / Brand</label>
+                                    <input type="text" id="nama" required placeholder="Misal: Dinda / Dinda Thrift" 
+                                        class="w-full px-4 py-3 rounded-2xl bg-cream-100/60 border border-cream-300 text-sm focus:outline-none focus:border-peach-400 focus:bg-cream-50 transition-colors">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-charcoal-800 mb-2">Email atau No. WA</label>
+                                    <input type="text" id="email" required placeholder="dinda@email.com / 0812xxx" 
+                                        class="w-full px-4 py-3 rounded-2xl bg-cream-100/60 border border-cream-300 text-sm focus:outline-none focus:border-peach-400 focus:bg-cream-50 transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="layanan-pilih" class="block text-xs font-semibold uppercase tracking-wider text-charcoal-800 mb-2">Mau Bikin Apa Nih?</label>
+                                <select id="layanan-pilih" 
+                                    class="w-full px-4 py-3 rounded-2xl bg-cream-100/60 border border-cream-300 text-sm focus:outline-none focus:border-peach-400 focus:bg-cream-50 transition-colors">
+                                    <option value="Aesthetic Web Design">Website Katalog / Toko Online Estetik</option>
+                                    <option value="Brand Identity">Desain Logo & Branding Produk</option>
+                                    <option value="Campaign & Social">Konsep Foto Lookbook & Feed IG</option>
+                                    <option value="Paket Lengkap">Paket Komplit (Branding + Website)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="pesan" class="block text-xs font-semibold uppercase tracking-wider text-charcoal-800 mb-2">Spill Detail Proyeknya Dong</label>
+                                <textarea id="pesan" rows="4" required placeholder="Ceritain aja konsep brand kamu, referensi warna, atau target deadline-nya kapan..." 
+                                    class="w-full px-4 py-3 rounded-2xl bg-cream-100/60 border border-cream-300 text-sm focus:outline-none focus:border-peach-400 focus:bg-cream-50 transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-full bg-peach-400 hover:bg-peach-500 text-cream-50 font-semibold text-sm tracking-wide transition-all shadow-md hover:shadow-lg">
+                                Kirim Pesan Sekarang <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+
+                            <!-- Notifikasi Pengganti Alert -->
+                            <div id="form-feedback" class="hidden p-4 rounded-2xl bg-peach-100 border border-peach-300 text-charcoal-900 text-sm text-center">
+                                Yeay, pesanmu udah masuk! Tim <strong>FASHIOM VELORA</strong> bakal segera ngehubungin kamu ya. Ditunggu!
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="fragrance">
-            <h3>Woody</h3>
-            <p>Warm & Elegant</p>
+    <!-- 7. FOOTER -->
+    <footer class="bg-charcoal-900 text-cream-200 pt-16 pb-10 rounded-t-[2.5rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-cream-200/15">
+                <!-- Brand Info -->
+                <div class="space-y-4 lg:col-span-2">
+                    <a href="#" class="inline-flex items-center space-x-2">
+                        <span class="w-8 h-8 rounded-full bg-peach-400 flex items-center justify-center text-charcoal-900 font-serif font-bold text-lg">
+                            FV
+                        </span>
+                        <span class="font-serif text-2xl font-bold tracking-widest text-cream-50">
+                            FASHIOM <span class="text-peach-300 font-normal italic">VELORA</span>
+                        </span>
+                    </a>
+                    <p class="text-sm text-cream-200/70 max-w-md leading-relaxed">
+                        Creative studio anak muda yang siap bantu brand fashion dan UMKM kamu naik level lewat desain estetik bernuansa hangat.
+                    </p>
+                    <!-- Sosial Media -->
+                    <div class="flex space-x-3 pt-2">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-cream-50/10 hover:bg-peach-400 text-cream-50 flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full bg-cream-50/10 hover:bg-peach-400 text-cream-50 flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="Pinterest" class="w-10 h-10 rounded-full bg-cream-50/10 hover:bg-peach-400 text-cream-50 flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" aria-label="Behance" class="w-10 h-10 rounded-full bg-cream-50/10 hover:bg-peach-400 text-cream-50 flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-behance"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigasi Cepat -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-cream-50 mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2.5 text-sm text-cream-200/70">
+                        <li><a href="#home" class="hover:text-peach-300 transition-colors">Beranda</a></li>
+                        <li><a href="#layanan" class="hover:text-peach-300 transition-colors">Layanan Kami</a></li>
+                        <li><a href="#tentang" class="hover:text-peach-300 transition-colors">Cerita Kami</a></li>
+                        <li><a href="#portofolio" class="hover:text-peach-300 transition-colors">Portofolio</a></li>
+                        <li><a href="#kontak" class="hover:text-peach-300 transition-colors">Kontak Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Layanan Utama -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-cream-50 mb-4">Spesialisasi</h4>
+                    <ul class="space-y-2.5 text-sm text-cream-200/70">
+                        <li>Web Katalog & Olshop</li>
+                        <li>UI/UX & Landing Page</li>
+                        <li>Branding & Desain Logo</li>
+                        <li>Lookbook & Feed IG</li>
+                        <li>Desain Kemasan Produk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-cream-200/50 gap-4">
+                <p>&copy; 2026 FASHIOM VELORA Creative Studio. All Rights Reserved.</p>
+                <p>Dibuat penuh semangat sambil ngopi dalam nuansa Peach & Cream.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- ADVANTAGES -->
-<section class="advantages">
+    <!-- JAVASCRIPT INTERAKTIF -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Toggle Menu Mobile
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-    <div class="section-title">
-        <span>WHY CHOOSE US</span>
-        <h2>The Queen Experience</h2>
-        <p>Lebih dari sekadar aroma.</p>
-    </div>
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
 
-    <div class="advantage-grid">
+            // Tutup menu mobile saat tautan diklik
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
 
-        <div class="advantage">
-            <div class="symbol">✦</div>
-            <h3>Quality Ingredients</h3>
-            <p>Menggunakan bibit parfum asli untuk memberikan pengalaman aroma berkualitas.</p>
-        </div>
+            // 2. Filter Portofolio Interaktif
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-        <div class="advantage">
-            <div class="symbol">♡</div>
-            <h3>Long Lasting</h3>
-            <p>Aroma tahan hingga 10 jam sesuai klaim produk.</p>
-        </div>
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Reset gaya tombol aktif
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-peach-400', 'text-cream-50', 'shadow-sm');
+                        b.classList.add('bg-cream-50', 'text-charcoal-800', 'border', 'border-cream-200');
+                    });
 
-        <div class="advantage">
-            <div class="symbol">✧</div>
-            <h3>Custom Fragrance</h3>
-            <p>Bisa request campuran aroma sesuai kebutuhan dan selera.</p>
-        </div>
+                    // Aktifkan tombol yang diklik
+                    btn.classList.remove('bg-cream-50', 'text-charcoal-800', 'border', 'border-cream-200');
+                    btn.classList.add('bg-peach-400', 'text-cream-50', 'shadow-sm');
 
-    </div>
-</section>
+                    const filterValue = btn.getAttribute('data-filter');
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
 
-    <span style="letter-spacing:3px; color:#a47b35;">
-        GET IN TOUCH
-    </span>
+            // 3. Penanganan Pengiriman Formulir Kontak (Tanpa Alert)
+            const contactForm = document.getElementById('contact-form');
+            const formFeedback = document.getElementById('form-feedback');
 
-    <h2>Find Your Signature Scent.</h2>
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formFeedback.classList.remove('hidden');
+                contactForm.reset();
 
-    <p>
-        Siap menemukan aroma favoritmu?<br>
-        Hubungi Queen Parfume untuk informasi dan pemesanan.
-    </p>
-
-    <a href="#" class="btn" onclick="order('Informasi produk Queen Parfume')">
-        Order via WhatsApp
-    </a>
-
-    <p style="margin-top:25px;">
-        Instagram: @queenparfume
-    </p>
-
-    <p style="margin-top:30px;">
-       Atau temui kami langsung di 
-       Medan Sunggal, Sumatera Utara, Indonesia. 
-       Kode Pos: 20121
-    </p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <h2>QUEEN PARFUME.</h2>
-    <p>Your Signature Scent, Your Identity.</p>
-    <p>© 2026 Queen Parfume. All Rights Reserved.</p>
-</footer>
-
-<script>
-const whatsappNumber = "6283143382832";
-
-function order(product) {
-    const message =
-        "Halo Queen Parfume, saya tertarik dengan " +
-        product +
-        ". Boleh minta informasi lebih lanjut?";
-
-    const url =
-        "https://wa.me/" + whatsappNumber +
-        "?text=" + encodeURIComponent(message);
-
-    window.open(url, "_blank");
-}
-</script>
-
+                // Sembunyikan pesan setelah 6 detik
+                setTimeout(() => {
+                    formFeedback.classList.add('hidden');
+                }, 6000);
+            });
+        });
+    </script>
 </body>
 </html>
